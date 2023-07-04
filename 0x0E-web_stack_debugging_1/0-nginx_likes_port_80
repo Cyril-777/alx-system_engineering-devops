@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# debugging qhat's keeping Nginx from listening on port 80
+# the solution is to create a symbolic link from the sites-available/default file
+# to the sites-enabled/default file, which makes Nginx recognize and use the default configuration
+
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
