@@ -11,8 +11,8 @@ frontend cyril-777.tech-frontend
         default_backend cyril-777.tech-backend
 backend cyril-777.tech-backend
         balance roundrobin
-        server 199194-web-01 54.173.134.61 check
-        server 199194-web-02 54.89.133.85 check
+        server 199194-web-01 54.173.134.61:80 check
+        server 199194-web-02 54.89.133.85:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
