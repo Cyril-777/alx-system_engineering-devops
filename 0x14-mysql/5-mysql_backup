@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # Script to backup all MySQL databases to a compressed archive
 
 mysqldump -uroot -p"$1" --all-databases > backup.sql
