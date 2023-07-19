@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # script to run the whoami command under the user passed as an argument
 
-su "$1" -s /bin/sh -c 'echo $USER'
+su "$1" -s /bin/bash -c 'echo $USER'
