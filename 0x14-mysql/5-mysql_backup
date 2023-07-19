@@ -1,0 +1,19 @@
+#!/bin/env bash
+# Script to backup all MySQL databases to a compressed archive
+
+# Take password as argument
+PASS=$1
+
+# Get current date in day-month-year format
+DAY=`date +%d`
+MONTH=`date +%m`
+YEAR=`date +%Y`
+
+# Dump all databases and pipe to backup.sql 
+mysqldump -u root -p${PASS} --all-databases > backup.sql
+
+# Compress to tar.gz archive with date name
+tar -czvf ${DAY}-${MONTH}-${YEAR}.tar.gz backup.sql
+
+# Remove uncompressed backup 
+rm backup.sql
