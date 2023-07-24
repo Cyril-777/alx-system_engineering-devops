@@ -14,7 +14,7 @@ def todolist(user_id):
         'https://jsonplaceholder.typicode.com/users/{}/todos'.format(
             user_id)).json()
     completed_tasks = ['\t {}\n'.format(dic.get('title')) for dic in tasks
-                 if dic.get('completed')]
+                       if dic.get('completed')]
     if name and tasks:
         print("Employee {} is done with tasks({}/{}):".format
               (name, len(completed_tasks), len(tasks)))
