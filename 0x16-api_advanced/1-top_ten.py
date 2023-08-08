@@ -11,7 +11,7 @@ def top_ten(subreddit):
 
     if subreddit is None or not isinstance(subreddit, str):
         return 0
-    
+
     url = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
     headers = {'User-Agent': 'API-Learner'}
 
